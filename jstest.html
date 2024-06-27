@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>class APIError extends Error {
+        constructor(message, status) {
+          super(message);
+          this.status = status;
+        }
+      }
+      
+      async function getTodos() {
+        const url = "https://jsonplaceholder.typicode.com/todos";
+      
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new APIError(`API request failed with status ${response.status}`, response.status);
+          }
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          if (error instanceof APIError) {
+            console.error("API Error:", error.message);
+          } else {
+            console.error("Unexpected error:", error);
+          }
+          return []; 
+        } finally {
+          console.log("API call completed (success or failure)");
+        }
+      }
+      
+      getTodos()
+        .then(todos => {
+          console.log("Todos:", todos);
+        })
+        .catch(error => {
+          console.error("Error fetching todos:", error);
+        });
+      </script>
+</body>
+</html>

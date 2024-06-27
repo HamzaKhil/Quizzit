@@ -1,0 +1,18 @@
+body{
+    background-color: rgba(82, 45, 45, 0.208);
+}
+#bigtitle{
+    color: blueviolet;
+}
+#cattitle{
+    width: 100px; height: auto; 
+    border: 2px;
+}
+.catpic{
+    width: 200px; height: auto;
+    border-radius: 23px;
+}
+#lien{
+    font-size: 22px;
+    color: red;
+}

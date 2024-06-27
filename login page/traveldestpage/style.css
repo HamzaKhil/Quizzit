@@ -1,0 +1,249 @@
+html{
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F88379;
+  
+}
+
+header {
+  background-color: #f1f1f3;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  width: 120px;
+}
+header button {
+  background-color: #F88379; 
+  color: white;
+  border: none; 
+  padding: 15px 30px;
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 25px;
+}
+button:hover {
+  background-color: #d76b60; 
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+nav ul li {
+  padding: 10px;
+}
+ul li a:hover {  
+  color: #ff0000;  
+}
+.tuni {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  background-position: center;
+  background-size: 699px;
+  padding: 120px;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 560px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  
+  
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}/* Position the "previous button" to the left */
+.prev{
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 3.6s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 12}
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.tuni div {
+  position: relative;
+}
+.tunisi {
+  width: 300px;
+}
+.tunisiacards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  background-color: #F88379;
+  padding-top: 35px;
+}
+.tunisiacards div img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.tunisiacards div img:hover {
+    opacity: 0.8;
+    transition: ease-in-out 0.3s;
+  transform: scale(1.1);
+}
+
+.tunisiacards div {
+  text-align: center;
+}
+
+footer{
+  background-color: #f1f1f1;
+  padding-top: 30px;
+  padding: 0%;
+  width: 100%;
+}
+#contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info{
+  text-align: center;
+}
+.button{
+    background-color: rgb(20, 48, 88);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(50, 87, 138);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book {
+    text-align:center;
+    margin-bottom:60px;
+    background-color: gr;
+}
+.beja{
+  width: 300px; height: 300px;
+}
+#form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 22px;
+}
+.detailbox{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  
+}
+textarea{
+  resize: none;
+}
+.copyright{
+  position: relative;
+  text-align: right;
+
+}
+footer{
+  
+}
+footer .copyright {
+  margin : 10px;
+  text-align: left;
+}

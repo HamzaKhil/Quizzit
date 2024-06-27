@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mailing List Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Join Our Mailing List</h1>
+
+  <form id="signup-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required aria-required="true">
+      <span class="error-message"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required aria-required="true">
+      <span class="error-message"></span>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required aria-required="true">
+        <span class="error-message" id="password-error"></span>
+        <div class="password-strength"></div> </div>
+    <button type="submit">Subscribe</button>
+
+  </form>
+  <script >
+    const form = document.getElementById('signup-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    function validateName(name) {
+    if (name === '') {
+        alert("name is required")
+        
+    } else if (name.trim() === '') {
+        alert("name should not be blank")
+    } 
+
+    }
+
+    nameInput.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) { 
+    validateName(nameInput.value);
+  }
+});
+   function validateEmail(email){
+    if (email == '' ){
+        alert("email is required")
+    }
+    
+   }
+   emailInput.addEventListener('keydown',(event)=>{
+    if (event.keyCode == 13){
+        validateEmail(emailInput.value)
+    }
+   });
+   function calculatePasswordStrength(password) {
+  let score = 0;
+  if (password.length >= 8) {
+    score += 1;
+  }
+  if (password.length >= 12) {
+    score += 1;
+  }
+  if (/[a-z]/.test(password)) {
+    score += 1;
+  }
+  if (/[A-Z]/.test(password)) {
+    score += 1;
+  }
+  if (/\d/.test(password)) {
+    score += 1;
+  }
+  if (/[!@#$%^&*()_+\-=\[\]{};':",./<>?|\\]/.test(password)) {
+    score += 1;
+  }
+  return score;
+}
+const passwordStrength = document.querySelector('.password-strength');
+const passwordInput = document.getElementById("password");
+function updatePasswordStrength(password) {
+  const score = calculatePasswordStrength(password);
+  console.log("Password Score:", score); 
+  passwordStrength.textContent = ''; 
+  let message;
+  if (score === 0) {
+    message = "Type a password please!";
+  } else if (score <= 2) {
+    message = "Weak Password";
+  } else if (score <= 4) {
+    message = "Medium Password";
+  } else {
+    message = "Strong Password";
+  }
+  passwordStrength.textContent = message;
+}
+passwordInput.addEventListener('input', (event) => { 
+  const password = event.target.value;
+  updatePasswordStrength(password);
+});
+    </script>
+</body>
+</html>

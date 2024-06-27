@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book list</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+<body>
+    <h1>My book list</h1>
+    <div id="book-list"></div>
+    <form id="add-book-form" >
+     <label for="title">Title:</label>
+     <input type="text" id="title" name="title" required>
+     <label for="author">Author:</label>
+     <input type="text" id="author" name="author" required>
+     <button type="submit">Add Book</button>
+    </form>
+    <script>
+      function addBook() {
+    const title = document.getElementById("title").value.trim();
+    const author = document.getElementById("author").value.trim();
+
+    if (title && author) {   
+      const list = document.createElement("li");
+      list.textContent = `${title} by ${author}`;
+      document.getElementById("book-list").appendChild(list);
+
+      document.getElementById("title").value = '';
+      document.getElementById("author").value = '';
+    } else {
+      alert("Please fill both title and author fields!");
+    }
+    
+}
+const addBookForm = document.getElementById("add-book-form");
+    addBookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    addBook();
+});
+
+    </script>
+</body>
+</html>
